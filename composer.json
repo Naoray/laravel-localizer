@@ -1,6 +1,6 @@
 {
     "name": "naoray/laravel-localizer",
-    "description": "A description for laravel-localizer.",
+    "description": "A method to manage languages.",
     "type": "package",
     "license": "MIT",
     "keywords": [

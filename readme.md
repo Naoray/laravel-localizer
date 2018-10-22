@@ -1,7 +1,6 @@
 # laravel-localizer
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/naoray/laravel-localizer.svg?style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/naoray/laravel-localizer.svg?style=flat-square)](https://packagist.org/packages/naoray/laravel-localizer)
 
 ## Install
