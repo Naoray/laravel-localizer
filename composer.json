@@ -1,0 +1,44 @@
+{
+    "name": "naoray/laravel-localizer",
+    "description": "A description for laravel-localizer.",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "localizer",
+        "language"
+    ],
+    "authors": [
+        {
+            "name": "Krishan Koenig",
+            "email": "krishan.koenig@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "5.7.*",
+        "illuminate/routing": "5.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Naoray\\LaravelLocalizer\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Naoray\\LaravelLocalizer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Naoray\\LaravelLocalizer\\LaravelLocalizerServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.7"
+    }
+}
