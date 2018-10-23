@@ -1,6 +1,6 @@
 {
-    "name": "naoray/laravel-test",
-    "description": "A method to manage languages.",
+    "name": "naoray/laravel-localizer",
+    "description": "Tool to manage multiple language app",
     "type": "package",
     "license": "MIT",
     "keywords": [

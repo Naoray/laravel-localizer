@@ -65,6 +65,9 @@ In the view you can use `allowedLocales()` to get all allowed locales in the vie
 @endforeach
 ```
 
+### Extend Functionalities
+You can add new `stores` and `detectors` by implementing the corresponding interface. For more info visit [codezero/laravel-localizer](https://github.com/codezero-be/laravel-localizer#drivers)
+
 ## Testing
 Run the tests with:
 
