@@ -4,6 +4,8 @@
 [![Travis](https://travis-ci.org/Naoray/laravel-localizer.svg?branch=master)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/naoray/laravel-localizer.svg?style=flat-square)](https://packagist.org/packages/naoray/laravel-localizer)
 
+Easily detect the language of your user from `session`, `cookie`, `browser locale` or `app setting`. Change locale with a get request to `localizer::setLocale` and control which language version the user can see via `localizer` middleware.
+
 This package is using [codezero/laravel-localizer](https://github.com/codezero-be/laravel-localizer) behind the scenes and extends its functionality to include:
 - add Route `localizer::setLocale` for changing locales
 - add Carbon store to get localized timestamps
