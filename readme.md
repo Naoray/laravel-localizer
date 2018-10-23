@@ -1,7 +1,7 @@
 # laravel-localizer
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/naoray/laravel-localizer.svg?style=flat-square)]()
+[![Travis](https://travis-ci.org/Naoray/laravel-localizer.svg?branch=master)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/naoray/laravel-localizer.svg?style=flat-square)](https://packagist.org/packages/naoray/laravel-localizer)
 
 This package is using [codezero/laravel-localizer](https://github.com/codezero-be/laravel-localizer) behind the scenes and extends its functionality to include:
