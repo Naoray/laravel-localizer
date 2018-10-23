@@ -2,31 +2,39 @@
 
 namespace Naoray\LaravelLocalizer;
 
-use Illuminate\Support\Carbon;
+use CodeZero\Localizer\Localizer as BaseLocalizer;
 
-class Localizer
+class Localizer extends BaseLocalizer
 {
     /**
-     * Set locale in app.
-     *
-     * @param string $locale
-     * @return void
+     * @var Localizer
      */
-    public function setLocale($locale)
+    protected static $instance;
+
+    /**
+     * Create a new Localizer instance.
+     *
+     * @param \Illuminate\Support\Collection|array $locales
+     * @param \Illuminate\Support\Collection|array $detectors
+     * @param \Illuminate\Support\Collection|array $stores
+     */
+    public function __construct($locales, $detectors, $stores = [])
     {
-        app()->setLocale($locale);
-        Carbon::setLocale($locale);
+        parent::__construct($locales, $detectors, $stores);
+
+        self::$instance = $this;
     }
 
     /**
-     * Checks if locale is allowed.
+     * Check if the given locale is supported.
      *
-     * @param string $locale
+     * @param mixed $locale
+     *
      * @return bool
      */
-    public function isAllowed($locale)
+    public function isSupportedLocale($locale)
     {
-        return in_array($locale, self::allowedLanguages());
+        return in_array($locale, $this->locales);
     }
 
     /**
@@ -34,8 +42,8 @@ class Localizer
      *
      * @return array
      */
-    public static function allowedLanguages()
+    public static function allowedLocales()
     {
-        return config('app.allowed_locales');
+        return self::$instance->locales;
     }
 }

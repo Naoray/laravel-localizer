@@ -24,6 +24,22 @@ class LaravelLocalizerServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(__DIR__ . '/../routes/web.php');
 
-        $router->aliasMiddleware('localize', \Naoray\LaravelLocalizer\Http\Middleware\Localize::class);
+        $router->aliasMiddleware('localize', \CodeZero\Localizer\Middleware\SetLocale::class);
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind(Localizer::class, function ($app) {
+            $locales = $app['config']->get('localizer.supported-locales');
+            $detectors = $app['config']->get('localizer.detectors');
+            $stores = $app['config']->get('localizer.stores');
+
+            return new Localizer($locales, $detectors, $stores);
+        });
     }
 }

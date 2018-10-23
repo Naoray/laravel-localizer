@@ -1,16 +1,37 @@
 # laravel-localizer
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Travis](https://img.shields.io/travis/naoray/laravel-localizer.svg?style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/naoray/laravel-localizer.svg?style=flat-square)](https://packagist.org/packages/naoray/laravel-localizer)
+
+This package is using [codezero/laravel-localizer](https://github.com/codezero-be/laravel-localizer) behind the scenes and extends its functionality to include:
+- add Route `localizer::setLocale` for changing locales
+- add Carbon store to get localized timestamps
+- add Facade to use `allowedLocales()` method in views
 
 ## Install
 `composer require naoray/laravel-localizer`
 
+Publish config with `php artisan vendor:publish --provider="CodeZero\Localizer\LocalizerServiceProvider" --tag="config"`
+
 ## Usage
-Add `allowed_locales` array to your `app` config with all allowed locales.
+### Add Supported Locales
+Edit `supported-locales` array of the `localizer` config to include all allowed locales.
 
 ```php
-'allowed_locales' => ['en', 'de']
+'supported-locales' => ['en', 'de']
+```
+
+### Add Carbon Store
+Add `\Naoray\LaravelLocalizer\Stores\CarbonStore::class` to `localizerstores` to enable the carbon store.
+
+```php
+'stores' => [
+  CodeZero\Localizer\Stores\SessionStore::class,
+  CodeZero\Localizer\Stores\CookieStore::class,
+  CodeZero\Localizer\Stores\AppStore::class,
+  Naoray\LaravelLocalizer\Stores\CarbonStore::class,
+],
 ```
 
 ### Use Localizer in middleware
@@ -28,12 +49,19 @@ protected function mapWebRoutes()
 
 Or simply add it as a middleware to your route groups.
 
-### Using Localizer in view
+### Add Change Locale routes in view
 Add `Localizer` Facade to `app` config.
 
+```php
+//...
+'Localizer' => Naoray\LaravelLocalizer\Facades\LocalizerFacade::class,
+```
+
+In the view you can use `allowedLocales()` to get all allowed locales in the view.
+
 ```blade
-@foreach (Localizer::allowedLanguages() as $locale)
-  <a href="{{ route('setLocale', ['locale' => $locale]) }}">{{ strtoupper($locale)}}</a>
+@foreach (Localizer::allowedLocales() as $locale)
+  <a href="{{ route('localizer::setLocale', ['locale' => $locale]) }}">{{ strtoupper($locale)}}</a>
 @endforeach
 ```
 

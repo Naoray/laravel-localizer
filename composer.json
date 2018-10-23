@@ -1,5 +1,5 @@
 {
-    "name": "naoray/laravel-localizer",
+    "name": "naoray/laravel-test",
     "description": "A method to manage languages.",
     "type": "package",
     "license": "MIT",
@@ -16,7 +16,11 @@
     ],
     "require": {
         "illuminate/support": "5.7.*",
-        "illuminate/routing": "5.7.*"
+        "illuminate/routing": "5.7.*",
+        "codezero/laravel-localizer": "^1.0"
+    },
+    "require-dev": {
+      "orchestra/testbench": "^3.7"
     },
     "autoload": {
         "psr-4": {
@@ -37,8 +41,5 @@
                 "Naoray\\LaravelLocalizer\\LaravelLocalizerServiceProvider"
             ]
         }
-    },
-    "require-dev": {
-        "orchestra/testbench": "^3.7"
     }
 }

@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/set/{locale}', 'LocalizerController@setLocale')->name('setLocale');
+Route::get('/set/{locale}', 'LocalizerController@setLocale')->name('localizer::setLocale');

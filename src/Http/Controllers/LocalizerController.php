@@ -26,13 +26,13 @@ class LocalizerController extends Controller
      *
      * @param string $locale
      * @param Illuminate\Http\Request $request
-     * @return void
+     * @return \Illuminate\Routing\Redirector
      */
     public function setLocale($locale, Request $request)
     {
-        abort_if(!$this->localizer->isAllowed($locale), 403);
+        abort_if(!$this->localizer->isSupportedLocale($locale), 403);
 
-        $request->session()->put('locale', $locale);
+        $this->localizer->store($locale);
 
         return redirect()->back();
     }

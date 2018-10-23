@@ -16,6 +16,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
+            \CodeZero\Localizer\LocalizerServiceProvider::class,
             \Naoray\LaravelLocalizer\LaravelLocalizerServiceProvider::class,
         ];
     }
@@ -30,6 +31,6 @@ class TestCase extends Orchestra
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('app.key', '6rE9Nz59bGRbeMATftriyQjrpF7DcOQm');
-        $app['config']->set('app.allowed_languages', ['en', 'de', 'fr']);
+        $app['config']->set('localizer.stores', array_merge(config('localizer.stores'), [\Naoray\LaravelLocalizer\Stores\CarbonStore::class]));
     }
 }

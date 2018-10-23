@@ -4,8 +4,127 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "870c288750accb6c70eff8750af96387",
+    "content-hash": "564b84a001d4060bbd802dde32606b7d",
     "packages": [
+        {
+            "name": "codezero/browser-locale",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codezero-be/browser-locale.git",
+                "reference": "36246aa6d07a20f20dca8725cf39cd3dbec80570"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codezero-be/browser-locale/zipball/36246aa6d07a20f20dca8725cf39cd3dbec80570",
+                "reference": "36246aa6d07a20f20dca8725cf39cd3dbec80570",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "illuminate/support": "^5.5",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeZero\\BrowserLocale\\Laravel\\BrowserLocaleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeZero\\BrowserLocale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Vermeyen",
+                    "email": "ivan@codezero.be"
+                }
+            ],
+            "description": "Get the most preferred locales from your visitor's browser.",
+            "keywords": [
+                "browser",
+                "country",
+                "detect",
+                "language",
+                "locale",
+                "php",
+                "website"
+            ],
+            "time": "2018-03-31T23:49:43+00:00"
+        },
+        {
+            "name": "codezero/laravel-localizer",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codezero-be/laravel-localizer.git",
+                "reference": "812692796a73bd38fc205404d8ef90df5bfa0d83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codezero-be/laravel-localizer/zipball/812692796a73bd38fc205404d8ef90df5bfa0d83",
+                "reference": "812692796a73bd38fc205404d8ef90df5bfa0d83",
+                "shasum": ""
+            },
+            "require": {
+                "codezero/browser-locale": "^3.0",
+                "illuminate/support": "^5.6",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "3.6.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeZero\\Localizer\\LocalizerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeZero\\Localizer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Vermeyen",
+                    "email": "ivan@codezero.be"
+                }
+            ],
+            "description": "Automatically detect and set an app locale that matches your visitor's preference.",
+            "keywords": [
+                "browser",
+                "cookie",
+                "country",
+                "detect",
+                "language",
+                "laravel",
+                "locale",
+                "localization",
+                "php",
+                "session"
+            ],
+            "time": "2018-04-01T14:55:32+00:00"
+        },
         {
             "name": "doctrine/inflector",
             "version": "v1.3.0",
