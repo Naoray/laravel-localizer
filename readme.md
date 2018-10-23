@@ -23,7 +23,7 @@ Edit `supported-locales` array of the `localizer` config to include all allowed 
 ```
 
 ### Add Carbon Store
-Add `\Naoray\LaravelLocalizer\Stores\CarbonStore::class` to `localizerstores` to enable the carbon store.
+Add `\Naoray\LaravelLocalizer\Stores\CarbonStore::class` to `localizerstores` to enable the carbon store and sync current locale with carbon locale.
 
 ```php
 'stores' => [
