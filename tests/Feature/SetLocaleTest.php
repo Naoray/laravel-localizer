@@ -7,7 +7,7 @@ use Naoray\LaravelLocalizer\Tests\TestCase;
 
 class SetLocaleTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -51,8 +51,7 @@ class SetLocaleTest extends TestCase
      * Assert response check.
      *
      * @param \Illuminate\Foundation\Testing\TestResponse $response
-     * @param string $locale
-     * @return void
+     * @param string                                      $locale
      */
     public function assertLocaleChange($response, $locale)
     {
