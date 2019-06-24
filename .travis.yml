@@ -3,6 +3,7 @@ language: php
 php:
   - 7.1
   - 7.2
+  - 7.3
 
 env:
   matrix:
@@ -16,4 +17,4 @@ install:
   - travis_retry composer update ${COMPOSER_OPTIONS} --prefer-source
 
 script:
-  - phpunit
+  - vendor/bin/phpunit
