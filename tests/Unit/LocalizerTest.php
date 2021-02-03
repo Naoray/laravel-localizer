@@ -2,8 +2,8 @@
 
 namespace Naoray\LaravelLocalizer\Tests\Unit;
 
-use Naoray\LaravelLocalizer\Tests\TestCase;
 use Naoray\LaravelLocalizer\Facades\LocalizerFacade;
+use Naoray\LaravelLocalizer\Tests\TestCase;
 
 class LocalizerTest extends TestCase
 {
