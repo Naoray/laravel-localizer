@@ -2,8 +2,8 @@
 
 namespace Naoray\LaravelLocalizer\Stores;
 
-use Illuminate\Support\Carbon;
 use CodeZero\Localizer\Stores\Store;
+use Illuminate\Support\Carbon;
 
 class CarbonStore implements Store
 {

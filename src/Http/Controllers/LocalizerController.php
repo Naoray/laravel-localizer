@@ -30,7 +30,7 @@ class LocalizerController extends Controller
      */
     public function setLocale($locale, Request $request)
     {
-        abort_if(!$this->localizer->isSupportedLocale($locale), 403);
+        abort_if(! $this->localizer->isSupportedLocale($locale), 403);
 
         $this->localizer->store($locale);
 
