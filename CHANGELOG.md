@@ -1,5 +1,10 @@
 # Change Log
 
+## [v2.0.0](https://github.com/naoray/laravel-localizer/tree/v2.0.0) (2021-02-03)
+
+**Added**
+- support for >= Laravel 6
+
 ## [v1.0.0](https://github.com/naoray/laravel-localizer/tree/v1.0.0) (2018-10-23)
 
 
